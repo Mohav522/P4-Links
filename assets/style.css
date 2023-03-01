@@ -1,0 +1,60 @@
+:root {
+    --margin: 10px;
+}
+
+ul {
+   
+    display: grid;
+    gap: 1em;
+	--columns: 1;
+
+	display: grid;
+	grid-template-columns: repeat(var(--columns), 1fr);
+}
+
+@media (min-width: 400px) {
+	ul { --columns: 3; }
+}
+
+@media (min-width: 600px) {
+	ul  { --columns: 5; }
+}
+    
+h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    
+    font-weight: 200;
+}
+
+
+.channel-title
+{
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: georgia, serif;
+    font-weight: 400;
+    font-style: bold;
+
+}
+
+.channel-description {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 60ch;
+    font-family: sans-serif;
+    font-weight: 200;
+}
+
+header, body, ul, section, image {
+   padding: 5px;
+}
+
+.image {
+    border-radius: 12px;
+}
+
