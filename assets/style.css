@@ -1,44 +1,82 @@
+/* Reset Styles */
+html *:where(:not(audio, canvas, iframe, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+html *,
+html *::before,
+html *::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+a,
+button {
+    cursor: revert;
+}
+
+details summary,
+menu,
+ol,
+ul {
+    list-style: none;
+}
+
+audio,
+img,
+video {
+    max-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+textarea {
+    white-space: revert;
+}
+
+::placeholder {
+    all: unset;
+}
+
+iframe {
+    border: unset;
+}
+
+
+/* Custom Styles */
 :root {
     --margin: 10px;
 }
 
 ul {
-   
-    display: grid;
+    display: flex;
     gap: 1em;
-	--columns: 1;
-
-	display: grid;
-	grid-template-columns: repeat(var(--columns), 1fr);
+    overflow-x: auto;
+    padding: 5px;
+    white-space: nowrap;
 }
 
-@media (min-width: 400px) {
-	ul { --columns: 3; }
-}
-
-@media (min-width: 600px) {
-	ul  { --columns: 5; }
-}
-    
 h2 {
     font-size: 18px;
     margin-top: 10px;
     margin-bottom: 10px;
     font-family: sans-serif;
-    
     font-weight: 200;
 }
 
-
-.channel-title
-{
+.channel-title {
     font-size: 50px;
     margin-top: 20px;
     margin-bottom: 10px;
     font-family: georgia, serif;
     font-weight: 400;
     font-style: bold;
-
 }
 
 .channel-description {
@@ -51,10 +89,4 @@ h2 {
 }
 
 header, body, ul, section, image {
-   padding: 5px;
-}
-
-.image {
-    border-radius: 12px;
-}
-
+    padding
