@@ -1,202 +1,60 @@
-
-@media (min-width: 400px) {
-	ul { --columns: 1; }
-}
-
-@media (min-width: 600px) {
-	ul  { --columns: 1; }
-}
-    
-/* Reset Styles */
-html *:where(:not(audio, canvas, iframe, img, svg, video):not(svg *, symbol *)) {
-    all: unset;
-    display: revert;
-}
-
-html *,
-html *::before,
-html *::after {
-    box-sizing: border-box;
-}
-
-a {
-    text-decoration: none;
-}
-
-a,
-button {
-    cursor: revert;
-}
-
-details summary,
-menu,
-ol,
-ul {
-    list-style: none;
-}
-
-audio,
-img,
-video {
-    max-width: 100%;
-}
-
-table {
-    border-collapse: collapse;
-}
-
-textarea {
-    white-space: revert;
-}
-
-::placeholder {
-    all: unset;
-}
-
-iframe {
-    border: unset;
-}
-
-
-/* Custom Styles */
 :root {
     --margin: 10px;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-}
-
-header {
-    background-color: #ffffff;
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-.scroll-container {
-    overflow-x: auto;
-}
-
 ul {
-    display: flex;
+   
+    display: grid;
     gap: 1em;
-    padding: 5px;
-    white-space: nowrap;
-    overflow-x: auto;
+	--columns: 1;
+
+	display: grid;
+	grid-template-columns: repeat(var(--columns), 1fr);
 }
 
-h1 {
-    font-size: 28px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-weight: bold;
+@media (min-width: 400px) {
+	ul { --columns: 3; }
 }
 
+@media (min-width: 600px) {
+	ul  { --columns: 5; }
+}
+    
 h2 {
     font-size: 18px;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-weight: normal;
+    font-family: sans-serif;
+    
+    font-weight: 200;
 }
 
-.channel-title {
-    font-size: 36px;
-    margin-top: 10px;
+
+.channel-title
+{
+    font-size: 50px;
+    margin-top: 20px;
     margin-bottom: 10px;
-    font-weight: bold;
+    font-family: georgia, serif;
+    font-weight: 400;
+    font-style: bold;
+
 }
 
 .channel-description {
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 10px;
     margin-bottom: 10px;
+    max-width: 60ch;
+    font-family: sans-serif;
+    font-weight: 200;
 }
 
-.image-block {
+header, body, ul, section, image {
+   padding: 5px;
+}
+
+.image {
     border-radius: 12px;
-    overflow: hidden;
 }
 
-.image-block img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.image-block:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.image-block:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.image-block figcaption {
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    font-size: 14px;
-    text-align: center;
-}
-
-.image-block figcaption a {
-    color: #ffffff;
-}
-
-.image-block figcaption a:hover {
-    text-decoration: underline;
-}
-
-.image-block figcaption p {
-    margin: 0;
-}
-
-.wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-}
-
-.carousel::-webkit-scrollbar {
-    height: 6px;
-}
-
-.carousel::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.carousel::-webkit-scrollbar-thumb {
-    background: #888;
-}
-
-.carousel::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-.carousel-item {
-    flex-shrink: 0;
-}
-
-.carousel-item img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
-.carousel-item:hover {
-    box-shadow:rgba(0, 0, 0, 0.2)
-}
