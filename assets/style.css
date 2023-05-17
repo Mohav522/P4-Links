@@ -3,13 +3,11 @@
 }
 
 ul {
-   
-    display: grid;
+    display: flex;
     gap: 1em;
-	--columns: 1;
-
-	display: grid;
-	grid-template-columns: repeat(var(--columns), 1fr);
+    overflow-x: auto;
+    padding: 5px;
+    white-space: nowrap;
 }
 
 @media (min-width: 400px) {
